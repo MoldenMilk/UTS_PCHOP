@@ -11,6 +11,8 @@ public class UserPreferences {
     Context context;
 
     public static final String IS_LOGIN = "isLogin";
+    public static final String KEY_ID = "id";
+    public static final String KEY_EMAIL = "email";
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
 
@@ -20,21 +22,27 @@ public class UserPreferences {
         editor = sharedPreferences.edit();
     }
 
-    public void setLogin(String username, String password){
+    public void setUser(int id,String email, String username, String password){
+
         editor.putBoolean(IS_LOGIN, true);
-        editor.putString(KEY_USERNAME, username);
-        editor.putString(KEY_PASSWORD, password);
+        editor.putInt(KEY_ID,id);
+        editor.putString(KEY_EMAIL,email);
+        editor.putString(KEY_USERNAME,username);
+        editor.putString(KEY_PASSWORD,password);
 
         editor.commit();
     }
 
     public User getUserLogin(){
-        String username, password;
+        String email,username,password;
+        int id;
 
-        username = sharedPreferences.getString(KEY_USERNAME, null);
-        password = sharedPreferences.getString(KEY_PASSWORD, null);
+        id = sharedPreferences.getInt(KEY_ID,0);
+        email = sharedPreferences.getString(KEY_EMAIL,null);
+        username = sharedPreferences.getString(KEY_USERNAME,null);
+        password = sharedPreferences.getString(KEY_PASSWORD,null);
 
-        return new User(username, password);
+        return new User(id,email,username,password);
     }
 
     public boolean checkLogin(){

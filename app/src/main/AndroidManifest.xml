@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pchop">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,13 +14,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PCHOP">
         <activity
+            android:name=".LocationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CheckOut"
+            android:exported="true" />
+        <activity
+            android:name=".Pages.GamesPage"
+            android:exported="true" />
+        <activity
+            android:name=".Pages.SportPage"
+            android:exported="true" />
+        <activity
+            android:name=".Pages.KitchenPage"
+            android:exported="true" />
+        <activity
+            android:name=".Pages.ClothesPage"
+            android:exported="true" />
+        <activity
             android:name=".SignActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +46,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

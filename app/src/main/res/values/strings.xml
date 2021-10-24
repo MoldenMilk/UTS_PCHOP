@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">PCHOP</string>
     <string name="pchop">PCHOP</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoibWlnaHR5bW9sZGVubWlsayIsImEiOiJja3VuaWJ0aGEwMnlzMnZvMXZiNHJvajE2In0.wxK68Vh4Io8IxKBdw0upRQ</string>
+    <string name="user_location_permission_explanation">Apakah Diperbolehkan?</string>
+    <string name="user_location_permission_not_granted">Ditolak kalian semua</string>
 </resources>

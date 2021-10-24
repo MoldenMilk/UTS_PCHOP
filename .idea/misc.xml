@@ -3,9 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2203125" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_clothes_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_games_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_kitchen_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_location.xml" value="0.1" />
         <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_sign.xml" value="0.25" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_splash.xml" value="0.22" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/activity_sport_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/fragment_games.xml" value="0.1" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/fragment_signin.xml" value="0.19010416666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/rv_clothes.xml" value="0.20416666666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/rv_games.xml" value="0.20416666666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/rv_kitchen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/layout/rv_sport.xml" value="0.20416666666666666" />
+        <entry key="..\:/Christian/Kuli Yeah/SEM V/Pemrograman Berbasis Platform/UTS/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

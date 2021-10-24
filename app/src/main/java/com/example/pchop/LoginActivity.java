@@ -3,17 +3,20 @@ package com.example.pchop;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.pchop.Database.DatabaseClient;
 import com.example.pchop.Model.User;
 import com.example.pchop.Preferences.UserPreferences;
 import com.google.android.material.button.MaterialButton;
 
 public class LoginActivity extends AppCompatActivity {
-    private EditText etEmail, etPassword;
+    private EditText etUsername, etPassword;
     private MaterialButton btnSignup, btnLogin;
     private UserPreferences userPreferences;
 
@@ -25,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
 
         userPreferences = new UserPreferences(LoginActivity.this);
 
-        etEmail = findViewById(R.id.etEmail);
+        etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
 
         btnSignup = findViewById(R.id.btnSignup);
@@ -45,20 +48,48 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(validateForm()){
-                    if(etEmail.getText().toString().trim().equals("190710447") && etPassword.getText().toString().trim().equals("tian")){
-                        userPreferences.setLogin(etEmail.getText().toString().trim(),etPassword.getText().toString().trim());
-                        checkLogin();
-                    }else{
-                        Toast.makeText(LoginActivity.this,"Username Atau Password Salah",Toast.LENGTH_SHORT).show();
-                    }
+                    attemptLogin(etUsername.getText().toString().trim(), etPassword.getText().toString().trim());
                 }
             }
         });
     }
 
+    private void attemptLogin(String username, String password){
+
+        class AttemptLogin extends AsyncTask<Void, Void, User> {
+            @Override
+            protected User doInBackground(Void... voids) {
+
+                User user = DatabaseClient.getInstance(LoginActivity.this)
+                        .getDatabase()
+                        .userDao()
+                        .attemptLogin(username,password);
+
+                return user;
+            }
+
+            @Override
+            protected void onPostExecute(User user) {
+                super.onPostExecute(user);
+                if(user == null){
+                    Toast.makeText(LoginActivity.this, "Username atau password salah", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(LoginActivity.this, "Berhasil login", Toast.LENGTH_SHORT).show();
+                    userPreferences.setUser(user.getId(),user.getEmail(), user.getUsername(),user.getPassword());
+                }
+                checkLogin();
+
+            }
+
+        }
+
+        AttemptLogin attemptLogin = new AttemptLogin();
+        attemptLogin.execute();
+    }
+
     private boolean validateForm(){
-        if(etEmail.getText().toString().trim().isEmpty() || etPassword.getText().toString().trim().isEmpty()){
-            Toast.makeText(LoginActivity.this, "Email Atau Password Kosong",Toast.LENGTH_SHORT).show();
+        if(etUsername.getText().toString().trim().isEmpty() || etPassword.getText().toString().trim().isEmpty()){
+            Toast.makeText(LoginActivity.this,"Username Atau Password Kosong",Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -70,5 +101,6 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         }
     }
+
 
 }

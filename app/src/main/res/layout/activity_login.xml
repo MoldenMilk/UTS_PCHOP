@@ -60,27 +60,28 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="LOGIN"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_gravity="center"/>
 
                 <EditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/etUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtPCHOP"
-                    android:hint="Email"
+                    android:hint="Username"
                     style="@style/Widget.AppCompat.EditText"
                     android:autofillHints="email"
                     android:inputType="text"/>
 
                 <EditText
                     android:id="@+id/etPassword"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     app:layout_constraintTop_toBottomOf="@+id/etemail"
                     android:hint="Password"
                     android:autofillHints="password"
@@ -99,6 +100,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_margin="10dp"
                         android:text="sign up"
                         android:backgroundTint="@color/Secondary"
                         android:textColor="@color/white"
@@ -109,6 +111,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:layout_margin="10dp"
                         android:text="login"
                         android:backgroundTint="@color/Secondary"
                         android:textColor="@color/white"
