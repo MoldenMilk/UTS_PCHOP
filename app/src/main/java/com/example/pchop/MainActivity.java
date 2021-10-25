@@ -34,13 +34,13 @@ public class MainActivity extends AppCompatActivity {
 
         btnLocation = findViewById(R.id.btnLocation);
 
-//        btnLocation.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, LocationActivity.class));
-//                finish();
-//            }
-//        });
+        btnLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LocationActivity.class));
+                finish();
+            }
+        });
     }
 
     public View.OnClickListener btnHome = new View.OnClickListener() {
