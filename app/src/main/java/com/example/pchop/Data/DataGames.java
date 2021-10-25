@@ -44,4 +44,5 @@ public class DataGames {
         Glide.with(view.getContext())
                 .load(img).apply(new RequestOptions()).into(view);
     }
+
 }

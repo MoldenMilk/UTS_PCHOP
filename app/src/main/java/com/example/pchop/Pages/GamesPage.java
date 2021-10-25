@@ -1,45 +1,39 @@
 package com.example.pchop.Pages;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
+import com.example.pchop.Data.DaftarGames;
+import com.example.pchop.Data.DataGames;
 import com.example.pchop.R;
+import com.example.pchop.RVGamesAdapter;
+
+import java.util.ArrayList;
 
 public class GamesPage extends AppCompatActivity {
+    ArrayList<DataGames> DataGamesList;
 
-    public DosenFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        getActivity().setTitle("Data Dosen");
-
-        // Menghubungkan rvDosen dengan recycler view yang ada pada layout
-        RecyclerView rvDosen = view.findViewById(R.id.rv_dosen);
-
-        //  Set Layout Manager dari recycler view
-        rvDosen.setLayoutManager(new LinearLayoutManager(this.getContext(),LinearLayoutManager.VERTICAL,false));
-
-        //  Set Adapter dari recycler view.
-        rvDosen.setAdapter(new RVDosenAdapter(Dosen.listOfDosen));
-
-    }
+    private RecyclerView recyclerView;
+    private RVGamesAdapter recyclerViewAdapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_games_page, container, false);
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_games_page);
+
+        DataGamesList = new DaftarGames().DataGames;
+
+        recyclerView = findViewById(R.id.rv_games);
+        recyclerViewAdapter = new RVGamesAdapter(this, DataGamesList);
+        layoutManager = new LinearLayoutManager(getApplicationContext());
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(recyclerViewAdapter);
     }
 }
